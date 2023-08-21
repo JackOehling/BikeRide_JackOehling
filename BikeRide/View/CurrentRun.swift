@@ -21,14 +21,14 @@ struct CurrentRunView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                    
+                
                 Text("Time: \(ride_duration.initial)").onReceive(ride_duration.timer){ _ in ride_duration.beginTime()}
                 
-                Text("Distance: \(ride_distance.totalDistance)")
+                Text(String(format: "%.2f miles", ride_distance.totalDistance))
                 
                 if (isEndRideViewable) {
                     Button(action: {
-                        ride_distance.toggleTracking()
+                        ride_distance.stopUpdatingLocation()
                         ride_duration.isRunning = false
                         isEndRideViewable = false
                         isHomeViewable = true
@@ -38,26 +38,32 @@ struct CurrentRunView: View {
                         Text("End Ride")
                     }
                 }
-                    
+                
                 
                 
                 HStack {
                     if (isBeginRideViewable) {
+                        
                         Button(action: {
-                            ride_distance.toggleTracking()
+                            isMoving.toggle()
+                            if isMoving {
+                                ride_distance.totalDistance = 0
+                            } else {
+                                ride_distance.stopUpdatingLocation()
+                            }
+                            ride_distance.startUpdatingLocation()
                             ride_duration.setIsRunning()
                             isEndRideViewable = true
                             isHomeViewable = false
                             isBeginRideViewable = false
                         }) {
-                            Text("Begin Ride")
+                            Text(isMoving ? "Stop Tracking" : "Start Tracking")
                         }
                     }
-                    
                 }
             }.buttonStyle(.bordered)
         }
-        }
+    }
 }
 
 struct CurrentRun_Previews: PreviewProvider {
