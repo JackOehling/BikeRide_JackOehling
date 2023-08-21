@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView {
             MainView().tabItem {
                 Image(systemName: "figure.outdoor.cycle")
-                Text("Main")
+                Text("Ride")
             }
             PastRidesView().tabItem{
                 Image(systemName: "calendar")

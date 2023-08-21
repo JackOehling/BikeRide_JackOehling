@@ -17,11 +17,11 @@
 		C4B058612A89BB1A00421DA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B058602A89BB1A00421DA5 /* MainView.swift */; };
 		C4B058632A89BB3900421DA5 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B058622A89BB3900421DA5 /* MeView.swift */; };
 		C4B058652A89BB6500421DA5 /* PastRidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B058642A89BB6500421DA5 /* PastRidesView.swift */; };
-		C4B71C3F2A89C395009DF117 /* BikeRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C3E2A89C395009DF117 /* BikeRide.swift */; };
 		C4B71C412A89CBDD009DF117 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C402A89CBDD009DF117 /* Duration.swift */; };
 		C4B71C432A8A88F0009DF117 /* CurrentRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C422A8A88F0009DF117 /* CurrentRun.swift */; };
 		C4B71C452A8AA5A1009DF117 /* PostRideStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C442A8AA5A1009DF117 /* PostRideStatsView.swift */; };
 		C4B71C472A8F0F8E009DF117 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C462A8F0F8E009DF117 /* LocationModel.swift */; };
+		C4B71C492A8FFE7C009DF117 /* CurrentBikeRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C482A8FFE7C009DF117 /* CurrentBikeRide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +55,11 @@
 		C4B058602A89BB1A00421DA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C4B058622A89BB3900421DA5 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		C4B058642A89BB6500421DA5 /* PastRidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRidesView.swift; sourceTree = "<group>"; };
-		C4B71C3E2A89C395009DF117 /* BikeRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeRide.swift; sourceTree = "<group>"; };
 		C4B71C402A89CBDD009DF117 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		C4B71C422A8A88F0009DF117 /* CurrentRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRun.swift; sourceTree = "<group>"; };
 		C4B71C442A8AA5A1009DF117 /* PostRideStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRideStatsView.swift; sourceTree = "<group>"; };
 		C4B71C462A8F0F8E009DF117 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		C4B71C482A8FFE7C009DF117 /* CurrentBikeRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBikeRide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,9 +160,9 @@
 		C4B71C3D2A89C37F009DF117 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C4B71C3E2A89C395009DF117 /* BikeRide.swift */,
 				C4B71C402A89CBDD009DF117 /* Duration.swift */,
 				C4B71C462A8F0F8E009DF117 /* LocationModel.swift */,
+				C4B71C482A8FFE7C009DF117 /* CurrentBikeRide.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,8 +299,8 @@
 			files = (
 				C4B058632A89BB3900421DA5 /* MeView.swift in Sources */,
 				C4B058382A89A7D800421DA5 /* ContentView.swift in Sources */,
+				C4B71C492A8FFE7C009DF117 /* CurrentBikeRide.swift in Sources */,
 				C4B71C452A8AA5A1009DF117 /* PostRideStatsView.swift in Sources */,
-				C4B71C3F2A89C395009DF117 /* BikeRide.swift in Sources */,
 				C4B71C432A8A88F0009DF117 /* CurrentRun.swift in Sources */,
 				C4B058612A89BB1A00421DA5 /* MainView.swift in Sources */,
 				C4B71C412A89CBDD009DF117 /* Duration.swift in Sources */,

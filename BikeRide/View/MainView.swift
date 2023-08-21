@@ -15,7 +15,7 @@ struct MainView: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             ZStack {
                 ZStack {
                     Map(coordinateRegion: $region).disabled(true).opacity(0.5).ignoresSafeArea()
@@ -30,10 +30,7 @@ struct MainView: View {
                 
                 
                 HStack {
-                    NavigationLink(
-                        destination: CurrentRunView(isActive: $isActive),
-                        isActive: $isActive
-                    ) {
+                    NavigationLink(destination: CurrentRunView(isActive: $isActive)) {
                         Text("Ride")
                             .padding()
                             .background(Color.green)
@@ -41,6 +38,7 @@ struct MainView: View {
                             .font(.headline)
                             .cornerRadius(400).aspectRatio(contentMode: .fill)
                     }
+                    
                 }
                 
             }
