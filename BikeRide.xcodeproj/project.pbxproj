@@ -22,6 +22,7 @@
 		C4B71C452A8AA5A1009DF117 /* PostRideStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C442A8AA5A1009DF117 /* PostRideStatsView.swift */; };
 		C4B71C472A8F0F8E009DF117 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C462A8F0F8E009DF117 /* LocationModel.swift */; };
 		C4B71C492A8FFE7C009DF117 /* CurrentBikeRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C482A8FFE7C009DF117 /* CurrentBikeRide.swift */; };
+		C4B71C8A2A940CDB009DF117 /* MapViewPolyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B71C892A940CDB009DF117 /* MapViewPolyLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C4B71C442A8AA5A1009DF117 /* PostRideStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRideStatsView.swift; sourceTree = "<group>"; };
 		C4B71C462A8F0F8E009DF117 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		C4B71C482A8FFE7C009DF117 /* CurrentBikeRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBikeRide.swift; sourceTree = "<group>"; };
+		C4B71C892A940CDB009DF117 /* MapViewPolyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPolyLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				C4B71C402A89CBDD009DF117 /* Duration.swift */,
 				C4B71C462A8F0F8E009DF117 /* LocationModel.swift */,
 				C4B71C482A8FFE7C009DF117 /* CurrentBikeRide.swift */,
+				C4B71C892A940CDB009DF117 /* MapViewPolyLine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				C4B058632A89BB3900421DA5 /* MeView.swift in Sources */,
 				C4B058382A89A7D800421DA5 /* ContentView.swift in Sources */,
+				C4B71C8A2A940CDB009DF117 /* MapViewPolyLine.swift in Sources */,
 				C4B71C492A8FFE7C009DF117 /* CurrentBikeRide.swift in Sources */,
 				C4B71C452A8AA5A1009DF117 /* PostRideStatsView.swift in Sources */,
 				C4B71C432A8A88F0009DF117 /* CurrentRun.swift in Sources */,

@@ -9,16 +9,16 @@ import SwiftUI
 import MapKit
 
 struct MainView: View {
-    @State var ride = Duration()
+    @ObservedObject var locationManager = LocationManager()
     @State var isActive: Bool = false
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    
     
     var body: some View {
         NavigationStack{
             ZStack {
                 ZStack {
-                    Map(coordinateRegion: $region).disabled(true).opacity(0.5).ignoresSafeArea()
+                    Map(coordinateRegion: $locationManager.region).disabled(true).opacity(0.5).ignoresSafeArea()
                     LinearGradient(
                         gradient: Gradient(colors: [Color.clear, Color.white.opacity(1)]),
                         startPoint: .bottom,
