@@ -29,21 +29,22 @@ struct CurrentRunView: View {
                 Text("Time: \(ride_duration.initial)").onReceive(ride_duration.timer){ _ in ride_duration.beginTime()}
                 
                 Text(String(format: "%.2f miles", ride_distance.totalDistance))
-                
-        
+            
                 
                 HStack {
                     if (isBeginRideViewable) {
-                        
                         Button(action: {
                             isMoving.toggle()
                             if isMoving {
                                 ride_duration.isRunning.toggle()
+                                ride_distance.isRideInProgress = true
                                 ride_distance.startUpdatingLocation()
+                                ride_distance.distance_in_miles = 0
                                 ride_distance.totalDistance = 0
                             } else {
                                 showSheet.toggle()
                                 ride_duration.isRunning.toggle()
+                                ride_distance.isRideInProgress = false
                                 ride_distance.stopUpdatingLocation()
                                 rideOver = BikeRide(duration_of_ride: ride_duration.initial, location_of_rider: ride_distance.totalDistance,
                                                     locations: ride_distance.convertCllocation(locationList: ride_distance.allLocations), endingLocation: MKCoordinateRegion(
@@ -62,6 +63,12 @@ struct CurrentRunView: View {
             }.buttonStyle(.bordered)
         }.sheet(isPresented: $showSheet){
             PostRidesView(rideOver: $rideOver)
+        }
+        .onDisappear {
+            // Reset ride status, distance, and last known location when leaving the view
+            ride_distance.isRideInProgress = false
+            ride_distance.totalDistance = 0
+            ride_distance.lastLocation = nil
         }
     }
 }

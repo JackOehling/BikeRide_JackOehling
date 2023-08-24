@@ -22,6 +22,10 @@ struct ContentView: View {
                 Image(systemName: "person")
                 Text("Me")
             }
+        }.onAppear {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
     }
 }

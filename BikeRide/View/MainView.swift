@@ -11,9 +11,7 @@ import MapKit
 struct MainView: View {
     @ObservedObject var locationManager = LocationManager()
     @State var isActive: Bool = false
-    
-    
-    
+
     var body: some View {
         NavigationStack{
             ZStack {
@@ -26,22 +24,26 @@ struct MainView: View {
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea()
-                }
+                }.padding(.top, 150)
                 
                 
                 HStack {
                     NavigationLink(destination: CurrentRunView(isActive: $isActive)) {
-                        Text("Ride")
-                            .padding()
+                        Text("Begin")
+                            .padding(35)
+                            .background(Color(red: 24.3/255.0, green: 70.6/255.0, blue: 53.7/255.0))
                             .background(Color.green)
                             .foregroundColor(.white)
-                            .font(.headline)
-                            .cornerRadius(400).aspectRatio(contentMode: .fill)
-                    }
+                            .font(Font.custom("Helvetica-Bold", size: 28))
+                            .clipShape(Circle())
+                    }.padding(.top, 475)
+                        .shadow(radius: 20)
                     
                 }
                 
-            }
+            }.navigationTitle(Text("Ride"))
+        }.onAppear {
+            locationManager.reset()
         }
     }
 }
