@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct MainView: View {
+struct HomeView: View {
     @ObservedObject var locationManager = LocationManager()
     @State var isActive: Bool = false
 
@@ -48,8 +48,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        HomeView()
     }
 }

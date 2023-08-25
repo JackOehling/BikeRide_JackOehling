@@ -6,7 +6,7 @@ import MapKit
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var locationManager = CLLocationManager()
     
-    
+    @Published var all_speeds: [Double] = []
     @Published var distance_in_miles: Double = 0
     @Published var allLocations: [CLLocation] = []
     @Published var totalDistance: Double = 0
@@ -25,6 +25,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         allLocations.append(contentsOf: locations)
+        
+        if let speed = locations.last?.speed {
+            all_speeds.append(speed)
+        }
+        
         guard let newLocation = locations.last else { return }
         
         if isRideInProgress {
@@ -65,12 +70,23 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         return output
     }
     
+    func average_speed() -> Double{
+        var speeds = 0.0
+        all_speeds.forEach{ speed in
+            speeds += (speed * 2.237)
+        }
+        let output = speeds / Double(all_speeds.count)
+        return output
+    }
+    
     func reset() {
         allLocations = []
         totalDistance = 0
         distance_in_miles = 0
         isRideInProgress = false
     }
+    
+    
     
     
     

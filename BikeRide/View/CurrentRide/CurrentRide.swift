@@ -41,7 +41,7 @@ struct CurrentRunView: View {
                             Text("AVG. SPEED")
                                 .font(.system(size: 25, weight: .semibold))
                                 .foregroundColor(Color(UIColor.secondaryLabel))
-                            Text("10.5 mph")
+                            Text("\(ride_distance.average_speed())")
                                 .font(.system(size: 35, weight: .bold))
                                 .bold()
                                 .foregroundColor(Color(UIColor.label))
