@@ -18,13 +18,30 @@ struct PostRidesView: View {
     
     
     var body: some View {
-        VStack {
-            Text("\(rideOver.duration_of_ride)")
-            Text("\(rideOver.location_of_rider)")
-            MapView(region: rideOver.endingLocation, lineCoordinates: rideOver.locations)
-                    }
+        ZStack {
+            MapView(region: rideOver.endingLocation, lineCoordinates: rideOver.locations).ignoresSafeArea()
+            HStack {
+                Text("\(rideOver.duration_of_ride)").font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.black)
+                    .padding(8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.white)
+                            .shadow(color: Color.black.opacity(0.3), radius: 2, x: 0, y: 2)
+                    )
+                Text("\(rideOver.location_of_rider)").font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.black)
+                    .padding(8)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.white)
+                            .shadow(color: Color.black.opacity(0.3), radius: 2, x: 0, y: 2)
+                    )
+            }
+            
         }
     }
+}
 
 struct PostRidesView_Previews: PreviewProvider {
     static var previews: some View {

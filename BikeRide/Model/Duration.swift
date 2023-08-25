@@ -25,6 +25,13 @@ struct Duration {
         isRunning = true
     }
     
+    func formattedDuration(from seconds: TimeInterval) -> String {
+        let minutes = Int(seconds) / 60
+        let seconds = Int(seconds) % 60
+        
+        return "\(minutes):\(String(format: "%02d", seconds))"
+    }
+    
     
     
 }

@@ -26,7 +26,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         allLocations.append(contentsOf: locations)
         guard let newLocation = locations.last else { return }
-            
+        
         if isRideInProgress {
                 if let last = lastLocation {
                     let distance = newLocation.distance(from: last)

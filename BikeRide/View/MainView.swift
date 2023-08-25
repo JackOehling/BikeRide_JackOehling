@@ -24,19 +24,19 @@ struct MainView: View {
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea()
-                }.padding(.top, 150)
+                }.padding(.top, 20)
                 
                 
                 HStack {
                     NavigationLink(destination: CurrentRunView(isActive: $isActive)) {
-                        Text("Begin")
-                            .padding(35)
-                            .background(Color(red: 24.3/255.0, green: 70.6/255.0, blue: 53.7/255.0))
+                        Text("Begin Ride")
+                            .padding(.horizontal, 35)
+                            .padding(.vertical, 12)
                             .background(Color.green)
                             .foregroundColor(.white)
-                            .font(Font.custom("Helvetica-Bold", size: 28))
-                            .clipShape(Circle())
-                    }.padding(.top, 475)
+                            .font(Font.custom("Helvetica-Bold", size: 26))
+                            .cornerRadius(100)
+                    }.padding(.top, 450)
                         .shadow(radius: 20)
                     
                 }
