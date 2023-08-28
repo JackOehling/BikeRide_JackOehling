@@ -14,6 +14,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     @Published var lastLocation: CLLocation?
     @Published var isRideInProgress = false
+    @Published var latitude = 0.0
+    @Published var longitude = 0.0
     
     
     
@@ -26,6 +28,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         allLocations.append(contentsOf: locations)
         
+        
         if let speed = locations.last?.speed {
             all_speeds.append(speed)
         }
@@ -36,6 +39,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 if let last = lastLocation {
                     let distance = newLocation.distance(from: last)
                     let distance_in_miles = distance / 1609
+                    latitude += 0.0003
+                    longitude += 0.0003
                     totalDistance += distance_in_miles
                 }
                 
@@ -75,8 +80,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         all_speeds.forEach{ speed in
             speeds += (speed * 2.237)
         }
-        let output = speeds / Double(all_speeds.count)
-        return output
+        var output = speeds / Double(all_speeds.count)
+        
+        if output.isNaN {output = 0}
+        
+        return output 
     }
     
     func reset() {

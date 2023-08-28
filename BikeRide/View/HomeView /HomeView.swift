@@ -11,38 +11,51 @@ import MapKit
 struct HomeView: View {
     @ObservedObject var locationManager = LocationManager()
     @State var isActive: Bool = false
+    @State private var navigationPath: NavigationPath = NavigationPath()
 
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $navigationPath) {
             ZStack {
                 ZStack {
                     Map(coordinateRegion: $locationManager.region).disabled(true).opacity(0.5).ignoresSafeArea()
                     LinearGradient(
-                        gradient: Gradient(colors: [Color.clear, Color.white.opacity(1)]),
+                        gradient: Gradient(colors: [Color.clear, Color(UIColor.systemBackground).opacity(1.2)]),
                         startPoint: .bottom,
                         endPoint: .top
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea()
-                }.padding(.top, 20)
+                }
                 
                 
                 HStack {
-                    NavigationLink(destination: CurrentRunView(isActive: $isActive)) {
-                        Text("Begin Ride")
+                    
+                    Button {
+                        navigationPath.append("CurrentRide")
+                    } label: {
+                        Text("BEGIN RIDE")
                             .padding(.horizontal, 35)
                             .padding(.vertical, 12)
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .font(Font.custom("Helvetica-Bold", size: 26))
-                            .cornerRadius(100)
+                            .background(Color(UIColor.label))
+                            .foregroundColor(Color(UIColor.systemBackground))
+                            .font(.system(size: 25, weight: .semibold))
                     }.padding(.top, 450)
                         .shadow(radius: 20)
                     
+                    
                 }
                 
-            }.navigationTitle(Text("Ride"))
-        }.onAppear {
+            }
+        }.navigationDestination(for: String.self) { name in
+            switch name{
+            case "CurrentRide":
+                CurrentRideView(navigationPath: $navigationPath)
+            default:
+                EmptyView()
+            }
+        }
+        
+        .onAppear {
             locationManager.reset()
         }
     }
