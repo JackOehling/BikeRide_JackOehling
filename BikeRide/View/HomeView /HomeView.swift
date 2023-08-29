@@ -11,7 +11,8 @@ import MapKit
 struct HomeView: View {
     @ObservedObject var locationManager = LocationManager()
     @State var isActive: Bool = false
-    @State private var navigationPath: NavigationPath = NavigationPath()
+    @State var navigationPath: NavigationPath = NavigationPath()
+    @ObservedObject var currentRideViewModel: CurrentRideViewModel
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -29,7 +30,6 @@ struct HomeView: View {
                 
                 
                 HStack {
-                    
                     Button {
                         navigationPath.append("CurrentRide")
                     } label: {
@@ -41,18 +41,16 @@ struct HomeView: View {
                             .font(.system(size: 25, weight: .semibold))
                     }.padding(.top, 450)
                         .shadow(radius: 20)
-                    
-                    
                 }
-                
             }
         }.navigationDestination(for: String.self) { name in
             switch name{
             case "CurrentRide":
-                CurrentRideView(navigationPath: $navigationPath)
+                CurrentRideView(currentRideViewModel: currentRideViewModel, navigationPath: $navigationPath)
             default:
                 EmptyView()
             }
+            
         }
         
         .onAppear {
@@ -63,6 +61,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(currentRideViewModel: CurrentRideViewModel())
     }
 }

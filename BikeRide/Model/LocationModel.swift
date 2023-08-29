@@ -7,6 +7,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var locationManager = CLLocationManager()
     
     @Published var all_speeds: [Double] = []
+    @Published var avg_speed: Double = 0
     @Published var distance_in_miles: Double = 0
     @Published var allLocations: [CLLocation] = []
     @Published var totalDistance: Double = 0
@@ -25,6 +26,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         allLocations.append(contentsOf: locations)
         
@@ -39,8 +41,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 if let last = lastLocation {
                     let distance = newLocation.distance(from: last)
                     let distance_in_miles = distance / 1609
-                    latitude += 0.0003
-                    longitude += 0.0003
+                    latitude += 0.002
+                    longitude += 0.002
                     totalDistance += distance_in_miles
                 }
                 
@@ -75,7 +77,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         return output
     }
     
-    func average_speed() -> Double{
+    func average_speed() -> Double {
         var speeds = 0.0
         all_speeds.forEach{ speed in
             speeds += (speed * 2.237)
@@ -83,15 +85,19 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         var output = speeds / Double(all_speeds.count)
         
         if output.isNaN {output = 0}
-        
+        avg_speed = output
+        print("\(all_speeds)")
         return output 
     }
+    
+    
     
     func reset() {
         allLocations = []
         totalDistance = 0
         distance_in_miles = 0
         isRideInProgress = false
+        all_speeds = []
     }
     
     

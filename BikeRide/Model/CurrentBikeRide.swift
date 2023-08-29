@@ -21,6 +21,15 @@ struct BikeRide {
         self.average_speed = average_speed
     }
     
+    init() {
+        self.duration_of_ride = ""
+        self.location_of_rider = 0.0
+        self.locations = []
+        endingLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        average_speed = 0.0
+        
+    }
+    
     
     
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct CurrentRideView: View {
-    @ObservedObject var currentRideViewModel = CurrentRideViewModel()
+    @ObservedObject var currentRideViewModel: CurrentRideViewModel
     @Binding var navigationPath: NavigationPath
     
     var body: some View {
@@ -30,7 +30,7 @@ struct CurrentRideView: View {
                             .font(.system(size: 25, weight: .semibold))
                             .foregroundColor(Color(UIColor.secondaryLabel))
                         
-                        Text("\(String(format: "%.2f", currentRideViewModel.locationManager.average_speed())) mph")
+                        Text("\(String(format: "%.2f", currentRideViewModel.getAverageSpeed())) mph")
                             .font(.system(size: 35, weight: .bold))
                             .bold()
                             .foregroundColor(Color(UIColor.label))
@@ -62,15 +62,15 @@ struct CurrentRideView: View {
                         .background(Color(UIColor.label))
                 }
             }
-            .sheet(isPresented: $currentRideViewModel.showSheet){
-            PostRidesView(rideOver: currentRideViewModel.finishedRide, navigationPath: $navigationPath)
-                .presentationDragIndicator(.visible)
-        }
         .padding(40)
         .onDisappear {
             currentRideViewModel.locationManager.isRideInProgress = false
             currentRideViewModel.locationManager.totalDistance = 0
             currentRideViewModel.locationManager.lastLocation = nil
+            currentRideViewModel.resetAvgSpeed()
+            currentRideViewModel.duration.resetTime()
+            currentRideViewModel.reset = true
+            
         }
     }
 }
@@ -78,7 +78,6 @@ struct CurrentRideView: View {
 struct CurrentRideView_Previews: PreviewProvider {
     static var previews: some View {
         let navigationPath = NavigationPath()
-        return CurrentRideView(navigationPath: .constant(navigationPath))
+        return CurrentRideView(currentRideViewModel: CurrentRideViewModel(), navigationPath: .constant(navigationPath))
     }
 }
-

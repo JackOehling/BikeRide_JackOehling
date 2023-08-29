@@ -32,6 +32,10 @@ struct Duration {
         return "\(minutes):\(String(format: "%02d", seconds))"
     }
     
+    mutating func resetTime() -> Void {
+        initial = 0
+    }
+    
     
     
 }
