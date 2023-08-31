@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4075B532A9F8BFB00167769 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C4075B522A9F8BFB00167769 /* FirebaseAnalytics */; };
+		C4075B552A9F8C0900167769 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C4075B542A9F8C0900167769 /* FirebaseAnalyticsSwift */; };
+		C4075B572A9F8FC100167769 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4075B562A9F8FC100167769 /* SignUpView.swift */; };
+		C4075B592A9F92B400167769 /* AuthentificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4075B582A9F92B400167769 /* AuthentificationManager.swift */; };
+		C4075B5B2A9F9C0A00167769 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4075B5A2A9F9C0A00167769 /* RootView.swift */; };
+		C4075B5D2A9FD30D00167769 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4075B5C2A9FD30D00167769 /* SettingsView.swift */; };
+		C4075B5F2A9FDFD600167769 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4075B5E2A9FDFD600167769 /* SignUpViewModel.swift */; };
+		C47E94A32A9ECB4200FEF0BE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E94A22A9ECB4200FEF0BE /* LoginView.swift */; };
+		C47E94A62A9ED12B00FEF0BE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C47E94A52A9ED12B00FEF0BE /* FirebaseAuth */; };
+		C47E94A82A9ED12B00FEF0BE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C47E94A72A9ED12B00FEF0BE /* FirebaseFirestore */; };
+		C47E94AA2A9ED27400FEF0BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C47E94A92A9ED27400FEF0BE /* GoogleService-Info.plist */; };
+		C47E94AC2A9ED37E00FEF0BE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E94AB2A9ED37E00FEF0BE /* LoginViewModel.swift */; };
 		C4B058362A89A7D800421DA5 /* BikeRideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B058352A89A7D800421DA5 /* BikeRideApp.swift */; };
 		C4B058382A89A7D800421DA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B058372A89A7D800421DA5 /* ContentView.swift */; };
 		C4B0583A2A89A7D900421DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B058392A89A7D900421DA5 /* Assets.xcassets */; };
@@ -44,6 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4075B562A9F8FC100167769 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C4075B582A9F92B400167769 /* AuthentificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationManager.swift; sourceTree = "<group>"; };
+		C4075B5A2A9F9C0A00167769 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C4075B5C2A9FD30D00167769 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C4075B5E2A9FDFD600167769 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		C47E94A22A9ECB4200FEF0BE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C47E94A92A9ED27400FEF0BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C47E94AB2A9ED37E00FEF0BE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C4B058322A89A7D800421DA5 /* BikeRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B058352A89A7D800421DA5 /* BikeRideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeRideApp.swift; sourceTree = "<group>"; };
 		C4B058372A89A7D800421DA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +91,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4075B552A9F8C0900167769 /* FirebaseAnalyticsSwift in Frameworks */,
+				C47E94A62A9ED12B00FEF0BE /* FirebaseAuth in Frameworks */,
+				C47E94A82A9ED12B00FEF0BE /* FirebaseFirestore in Frameworks */,
+				C4075B532A9F8BFB00167769 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,9 +115,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4075B512A9F8BFB00167769 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C42A854A2A9E5DB300530EA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C47E94A22A9ECB4200FEF0BE /* LoginView.swift */,
+				C47E94AB2A9ED37E00FEF0BE /* LoginViewModel.swift */,
+				C4075B562A9F8FC100167769 /* SignUpView.swift */,
+				C4075B582A9F92B400167769 /* AuthentificationManager.swift */,
+				C4075B5A2A9F9C0A00167769 /* RootView.swift */,
+				C4075B5C2A9FD30D00167769 /* SettingsView.swift */,
+				C4075B5E2A9FDFD600167769 /* SignUpViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -105,6 +143,7 @@
 				C4B058452A89A7D900421DA5 /* BikeRideTests */,
 				C4B0584F2A89A7D900421DA5 /* BikeRideUITests */,
 				C4B058332A89A7D800421DA5 /* Products */,
+				C4075B512A9F8BFB00167769 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +165,7 @@
 				C4B058352A89A7D800421DA5 /* BikeRideApp.swift */,
 				C4B058372A89A7D800421DA5 /* ContentView.swift */,
 				C4B058392A89A7D900421DA5 /* Assets.xcassets */,
+				C47E94A92A9ED27400FEF0BE /* GoogleService-Info.plist */,
 				C4B0583B2A89A7D900421DA5 /* Preview Content */,
 			);
 			path = BikeRide;
@@ -213,6 +253,12 @@
 			dependencies = (
 			);
 			name = BikeRide;
+			packageProductDependencies = (
+				C47E94A52A9ED12B00FEF0BE /* FirebaseAuth */,
+				C47E94A72A9ED12B00FEF0BE /* FirebaseFirestore */,
+				C4075B522A9F8BFB00167769 /* FirebaseAnalytics */,
+				C4075B542A9F8C0900167769 /* FirebaseAnalyticsSwift */,
+			);
 			productName = BikeRide;
 			productReference = C4B058322A89A7D800421DA5 /* BikeRide.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +331,9 @@
 				Base,
 			);
 			mainGroup = C4B058292A89A7D800421DA5;
+			packageReferences = (
+				C47E94A42A9ED12B00FEF0BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C4B058332A89A7D800421DA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,6 +352,7 @@
 			files = (
 				C4B0583D2A89A7D900421DA5 /* Preview Assets.xcassets in Resources */,
 				C4B0583A2A89A7D900421DA5 /* Assets.xcassets in Resources */,
+				C47E94AA2A9ED27400FEF0BE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,15 +378,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B058632A89BB3900421DA5 /* MeView.swift in Sources */,
+				C4075B572A9F8FC100167769 /* SignUpView.swift in Sources */,
+				C4075B592A9F92B400167769 /* AuthentificationManager.swift in Sources */,
+				C4075B5D2A9FD30D00167769 /* SettingsView.swift in Sources */,
+				C4075B5B2A9F9C0A00167769 /* RootView.swift in Sources */,
+				C4075B5F2A9FDFD600167769 /* SignUpViewModel.swift in Sources */,
 				C4B058382A89A7D800421DA5 /* ContentView.swift in Sources */,
 				C4B71C8A2A940CDB009DF117 /* MapViewPolyLine.swift in Sources */,
 				C4B71C492A8FFE7C009DF117 /* CurrentBikeRide.swift in Sources */,
 				C4B71C452A8AA5A1009DF117 /* PostRideStatsView.swift in Sources */,
 				C4B71C432A8A88F0009DF117 /* CurrentRide.swift in Sources */,
+				C47E94AC2A9ED37E00FEF0BE /* LoginViewModel.swift in Sources */,
 				C4B058612A89BB1A00421DA5 /* HomeView.swift in Sources */,
 				C4B71C412A89CBDD009DF117 /* Duration.swift in Sources */,
 				C4B71C8E2A997004009DF117 /* CurrentRideViewModel.swift in Sources */,
 				C4B058362A89A7D800421DA5 /* BikeRideApp.swift in Sources */,
+				C47E94A32A9ECB4200FEF0BE /* LoginView.swift in Sources */,
 				C4B71C472A8F0F8E009DF117 /* LocationModel.swift in Sources */,
 				C4B058652A89BB6500421DA5 /* PastRidesView.swift in Sources */,
 			);
@@ -511,7 +568,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jackOehling.BikeRide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackOehling.BikeRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -541,7 +598,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jackOehling.BikeRide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jackOehling.BikeRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -661,6 +718,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C47E94A42A9ED12B00FEF0BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4075B522A9F8BFB00167769 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47E94A42A9ED12B00FEF0BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C4075B542A9F8C0900167769 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47E94A42A9ED12B00FEF0BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		C47E94A52A9ED12B00FEF0BE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47E94A42A9ED12B00FEF0BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C47E94A72A9ED12B00FEF0BE /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47E94A42A9ED12B00FEF0BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4B0582A2A89A7D800421DA5 /* Project object */;
 }

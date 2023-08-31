@@ -11,7 +11,7 @@ import MapKit
 struct HomeView: View {
     @ObservedObject var locationManager = LocationManager()
     @State var isActive: Bool = false
-    @State var navigationPath: NavigationPath = NavigationPath()
+    @Binding var navigationPath: NavigationPath
     @ObservedObject var currentRideViewModel: CurrentRideViewModel
 
     var body: some View {
@@ -61,6 +61,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(currentRideViewModel: CurrentRideViewModel())
+        let navigationPath = NavigationPath()
+        HomeView(navigationPath: .constant(navigationPath), currentRideViewModel: CurrentRideViewModel())
     }
 }

@@ -20,6 +20,7 @@ struct PostRidesView: View {
     @State private var fullScreen = false
     @Binding var navigationPath: NavigationPath
     
+    @Binding var showSheet: Bool
     
     var body: some View {
         if fullScreen {
@@ -91,6 +92,7 @@ struct PostRidesView: View {
                     HStack {
                         Button {
                             navigationPath = NavigationPath()
+                            showSheet = false
                         } label: {
                             Text("FINISH").background(Color(UIColor.label))
                                 .padding(15)
@@ -101,7 +103,7 @@ struct PostRidesView: View {
                         }
                         
                         Button {
-                            navigationPath.append("CurrenRide")
+                            showSheet = false
                         } label: {
                             Text("RESUME").background(Color(UIColor.label))
                                 .padding(15)
@@ -125,6 +127,6 @@ struct PostRidesView_Previews: PreviewProvider {
     static var previews: some View {
         let navigationPath = NavigationPath()
         PostRidesView(rideOver: BikeRide(duration_of_ride: "0", location_of_rider: 0.0, locations: [], endingLocation: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.3601, longitude: -71.0589), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)), average_speed: 0.0)
-                      , navigationPath: .constant(navigationPath))
+                      , navigationPath: .constant(navigationPath), showSheet: .constant(false))
     }
 }

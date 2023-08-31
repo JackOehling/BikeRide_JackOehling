@@ -11,12 +11,13 @@ struct ContentView: View {
     @State private var name = ""
     @State private var navigationPath: NavigationPath = NavigationPath()
     @ObservedObject var currentRideViewModel = CurrentRideViewModel()
+
     
     var body: some View {
         ZStack {
-            NavigationStack(path: $navigationPath) {
+            NavigationStack {
                 TabView {
-                    HomeView(currentRideViewModel: currentRideViewModel).tabItem {
+                    HomeView(navigationPath: $navigationPath, currentRideViewModel: currentRideViewModel).tabItem {
                         Image(systemName: "figure.outdoor.cycle")
                         Text("Ride")
                     }.onAppear {
@@ -43,7 +44,7 @@ struct ContentView: View {
                 }.navigationTitle(Text(name))
             }
         }.sheet(isPresented: $currentRideViewModel.showSheet){
-            PostRidesView(rideOver: currentRideViewModel.finishedRide, navigationPath: $navigationPath)
+            PostRidesView(rideOver: currentRideViewModel.finishedRide, navigationPath: $navigationPath, showSheet:  $currentRideViewModel.showSheet)
                 .presentationDragIndicator(.visible)
             }
             

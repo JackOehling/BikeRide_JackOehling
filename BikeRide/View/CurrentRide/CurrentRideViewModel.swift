@@ -13,6 +13,7 @@ class CurrentRideViewModel: ObservableObject {
     @Published var locationManager = LocationManager()
     @Published var duration = Duration()
     @Published var isMoving: Bool = false
+    
     @Published var showSheet = false
     
     @Published var finishedRide = BikeRide()
@@ -27,6 +28,7 @@ class CurrentRideViewModel: ObservableObject {
             locationManager.startUpdatingLocation()
             reset = false
         } else {
+            
             showSheet.toggle()
             duration.isRunning.toggle()
             locationManager.isRideInProgress = false
