@@ -1,7 +1,7 @@
 # Bike Ride
 
-## About:
-Welcome to Bike Ride, the app made for avid bikers and craeted by an aivd biker.
+
+Welcome to Bike Ride, the app created by a biker for avid bikers.
 
 
 <div style="display: flex; justify-content: space-between;">
