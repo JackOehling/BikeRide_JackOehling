@@ -10,4 +10,4 @@ Welcome to Bike Ride, the app created by a biker for avid bikers.
     <img src="https://github.com/JackOehling/BikeRide_JackOehling/assets/132861458/f4a792d3-01a6-4398-b97c-9251a156ffa1" width="185" height="400">
 </div>
 
-👉 [Click here to watch the demo]([https://www.youtube.com/watch?v=](https://youtube.com/shorts/Ao6UWDopvz8))
+👉 [Click here to watch the demo](https://youtube.com/shorts/Ao6UWDopvz8)
